@@ -50,11 +50,10 @@ class Corpus(object):
 
     def get_sentences(self):
         remove_punctuation_map = dict((ord(char), None) for char in string.punctuation.replace('\'', ''))
-        sentences = re.split(r'\n|\. |!|\?', self.text)
+        sentences = re.split(r'\n|\. |!|\?', self.text.decode('utf-8'))
 
         return [(
-                    sentence.decode('utf-8')
-                        .strip('\n')
+                    sentence.strip('\n')
                         .translate(remove_punctuation_map)
                         .lower()
                         .split()
