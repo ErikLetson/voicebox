@@ -16,6 +16,7 @@ $ source venv/bin/activate
 
 $ pip install -r requirements.txt
 $ npm install
+$ npm run build
 
 $ heroku local web
 ```
